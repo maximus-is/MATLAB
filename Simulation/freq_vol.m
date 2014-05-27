@@ -50,12 +50,12 @@ for i = 1:num_freq
     ret = p(2:end) - p(1);
     b_ret = p(end) - p(1:end-1);
     
-    cub_e = e0 + e1*log(J) + e2*log(J).^2 + e3*log(J).^3;
+    %cub_e = e0 + e1*log(J) + e2*log(J).^2 + e3*log(J).^3;
+    
+    %cub = exp(cub_e);
 
-    cub = exp(cub_e);
-
-    max_log = alpha*var(ret./(1:n_obs-1)) ...
-        + (1-alpha)*var(b_ret./(n_obs-1:-1:1));
+    max_log = alpha*var(ret./(n_obs-1:-1:1)) ...
+        + (1-alpha)*var(b_ret./(1:n_obs-1));
     
     max_log = max_log*cub;
     
