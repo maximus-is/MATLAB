@@ -112,3 +112,18 @@ toc;
 % close all;
 % 
 % diary off;
+
+%% Find relationship
+
+ratios = repmat(V0,length(enum),1)./mean(var_gbm,3);
+y = reshape(ratios',1230,1);
+
+X = [ones(length(y),1) reshape(repmat(enum,10,1),1230,1)];
+
+cvx_begin;
+    variable b(2,1)
+    minimize sum(abs(X*b - y)./y)
+    
+cvx_end;
+
+
