@@ -16,7 +16,7 @@ op = s;
 cl = s;
 cl_1 = s;
 
-num_est = 8;
+num_est = 7;
 alpha = 0.5;
 
 e0 = 1;
