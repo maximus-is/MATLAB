@@ -74,7 +74,8 @@ for i = 1:num_freq
     rs = sum(log(high./cl).*log(high./op) + ...                             % Rogers and Satchell high-low-open-close
         log(low./cl).*log(low./op));
     
-    yz = yang_zhang(high',low',op',cl',cl_1');                              % Yang and Zhang minimum variance
+    %yz = yang_zhang(high',low',op',cl',cl_1');                              % Yang and Zhang minimum variance
     
-    A(1,:,i) = [acc park gk gk_2 rs yz rv max_log];
+    A(1,:,i) = [rv acc park gk gk_2 rs ...yz
+        max_log];
 end

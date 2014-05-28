@@ -1,5 +1,5 @@
 % Simulation parameters
-num_est = 8;
+num_est = 7;
 num_freq = 8;
 freq = [100,5,2,2,3,5,2,2];
 
@@ -14,7 +14,7 @@ dt = 1/N;                                                                   % St
 num_days = 1;
 
 % Initial parameters
-V0 = ((100:200:900).^2)/(252*N);                                            % Initial variance
+%V0 = ((100:200:900).^2)/(252*N);                                            % Initial variance
 V0 = (0.04:0.02:0.1)/tra_d;
 s0 = 100;                                                                   % Initial stock price
 
